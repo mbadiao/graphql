@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,18 +15,33 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
+  body{
+    cursor: none;
+  }
+  .cursor-dot, .cursor-outline{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
   .text-balance {
     text-wrap: balance;
+  }
+  .text-primary {
+    color: #5e37ff;
+  }
+  .bg-primary {
+    background-color: #5e37ff;
+  }
+  .bg-secondary {
+    background-color: #f6f8fe;
+  }
+  .text-secondary {
+    color: #f6f8fe;
   }
 }
