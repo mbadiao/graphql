@@ -8,11 +8,11 @@ const Profile = () => {
   return (
     <>
     <Header/>
-      <div className="flex justify-evenly my-5">
+      <div className="flex justify-evenly my-5 flex-wrap">
         <Middle />
         <Aside_right />
       </div>
-      <div className="flex justify-evenly my-5">
+      <div className="flex justify-evenly my-5 flex-wrap">
       <div>
         <Middle_bottom />
       </div>
