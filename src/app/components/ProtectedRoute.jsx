@@ -1,28 +1,35 @@
-'use client';
-import { useEffect } from 'react';
-import { useAppContext } from '../context/appContext';
-import { useRouter } from 'next/navigation';
+// "use client";
+// import { useEffect } from "react";
+// import { useAppContext } from "../context/appContext";
+// import { useRouter } from "next/navigation";
 
-const protectedRoute = (WrappedComponent) => {
-  return function WithAuth(props) {
-    const { User, lo } = useAppContext();
-    const router = useRouter();
+// const protectedRoute = (WrappedComponent) => {
+//   return function WithAuth(props) {
+//     const token = localStorage.getItem("token");
+//     const router = useRouter();
 
-    useEffect(() => {
-      if (!User) {
-        const token = localStorage.getItem('token');
-        if (!token) {
-          router.push('/');
-        }
-      }
-    }, [User, router]);
+//     useEffect(() => {
+//       if (!token) {
+//         router.push("/");
+//       }
+//     }, [token, router]);
 
-    if (!User) {
-      return null;
-    }
+//     if (!token) {
+//       return null;
+//     }
 
-    return <WrappedComponent {...props} />;
-  };
-};
+//     return <WrappedComponent {...props} />;
+//   };
+// };
 
-export default protectedRoute;
+// export default protectedRoute;
+
+import React from 'react'
+
+const ProtectedRoute = () => {
+  return (
+    <div>ProtectedRoute</div>
+  )
+}
+
+export default ProtectedRoute

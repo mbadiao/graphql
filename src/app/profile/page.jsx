@@ -3,6 +3,7 @@ import Aside_right from "../components/Aside_right";
 import Aside_left from "../components/Aside_left";
 import Middle from "../components/Middle";
 import Middle_bottom from "../components/Middle_bottom";
+import protectedRoute from "../components/ProtectedRoute";
 const Profile = () => {
   return (
     <>
