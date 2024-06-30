@@ -1,4 +1,3 @@
-"use client"
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { useAppContext } from '../context/appContext';
 
@@ -22,9 +21,9 @@ const ChartTop = () => {
   // Data formatting function
   const formatAmount = (amount) => {
     if (amount >= 1000000) {
-      return `${(amount / 1000000).toFixed(1)} MB`;
+      return `${(amount / 1000000).toFixed()} MB`;
     } else if (amount >= 1000) {
-      return `${(amount / 1000).toFixed(1)} kB`;
+      return `${(amount / 1000).toFixed()} kB`;
     } else {
       return `${amount} B`;
     }
@@ -37,8 +36,8 @@ const ChartTop = () => {
   }));
 
   return (
-    <div className="bg-white rounded-2xl w-[90%] h-max m-auto py-2">
-      <div className="text-xl font-semibold mb-4 flex gap-2 justify-center">
+    <div className="bg-white rounded-2xl w-[90%] h-max mx-auto py-2">
+      <div className="text-xl font-semibold flex gap-2 justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -56,12 +55,17 @@ const ChartTop = () => {
 
         <h2 className="text-[#5e37ff]">XP View by Project</h2>
       </div>
-      <ResponsiveContainer width="100%" height={400}>
+      <ResponsiveContainer className='mx-auto' width="90%" height={400}>
         <BarChart data={data}>
-          <XAxis dataKey="name" />
+          <XAxis dataKey="name" tick={false} axisLine={false} />
           <YAxis tickFormatter={formatAmount} />
-          <Tooltip formatter={formatAmount} />
-          <Bar dataKey="xpAmount" fill="#5e37ff" />
+          <Tooltip formatter={formatAmount} cursor={false}/>
+          <Bar
+            dataKey="xpAmount"
+            fill="#5e37ff"
+            barSize={20}
+            radius={[10, 10, 10, 10]}
+          />
         </BarChart>
       </ResponsiveContainer>
     </div>

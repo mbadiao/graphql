@@ -16,10 +16,11 @@
 }
 
 @layer utilities {
-  body{
+  body {
     cursor: none;
   }
-  .cursor-dot, .cursor-outline{
+  .cursor-dot,
+  .cursor-outline {
     position: fixed;
     top: 0;
     left: 0;
@@ -43,5 +44,21 @@
   }
   .text-secondary {
     color: #f6f8fe;
+  }
+
+  .wave {
+    animation: wave 1s ease-in-out infinite;
+  }
+
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(20deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
   }
 }
